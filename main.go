@@ -38,7 +38,17 @@ func main() {
 
 	fmt.Println()
 	fmt.Print("Your answer: ")
-	fmt.Scan(&userAnswer)
+	_, err := fmt.Scan(&userAnswer)
+
+	if err != nil {
+		fmt.Println("Please enter a number.")
+		return
+	}
+
+	if userAnswer < 1 || userAnswer > len(question.Choices) {
+		fmt.Printf("Please enter a number between 1 and %d\n", len(question.Choices))
+		return
+	}
 
 	if userAnswer == question.CorrectAnswer {
 		fmt.Println("Correct!")
