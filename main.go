@@ -33,4 +33,19 @@ func main() {
 	for index, choice := range question.Choices {
 		fmt.Printf("%d. %s\n", index+1, choice)
 	}
+
+	var userAnswer int
+
+	fmt.Println()
+	fmt.Print("Your answer: ")
+	fmt.Scan(&userAnswer)
+
+	if userAnswer == question.CorrectAnswer {
+		fmt.Println("Correct!")
+	} else {
+		fmt.Printf(
+			"Incorrect. The answer was %d.\n",
+			question.CorrectAnswer,
+		)
+	}
 }
