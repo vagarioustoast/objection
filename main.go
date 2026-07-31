@@ -24,6 +24,14 @@ func main() {
 	fmt.Println(exchange.Question)
 	fmt.Println(exchange.Answer)
 	fmt.Println("Possible objection:", exchange.PossibleObjection)
+
+	playerObjection := trial.Hearsay
+
+	if exchange.IsCorrect(playerObjection) {
+		fmt.Println("Correct objection.")
+	} else {
+		fmt.Println("Incorrect objection.")
+	}
 	// question := Question{
 	// 	Prompt: "After a town installed additional streetlights, reported crime declined. Therefore, the new streetlights caused the decline in crime.",
 	// 	Stem:   "Which flaw appears in the argument?",

@@ -11,3 +11,7 @@ type Exchange struct {
 	Answer            string
 	PossibleObjection Objection
 }
+
+func (exchange Exchange) IsCorrect(objection Objection) bool {
+	return objection == exchange.PossibleObjection
+}
